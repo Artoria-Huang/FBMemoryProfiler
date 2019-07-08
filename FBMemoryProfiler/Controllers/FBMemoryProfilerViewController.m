@@ -60,6 +60,7 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
   if (self = [super init]) {
     _analysisCache = [FBRetainCycleAnalysisCache new];
     _dataSource = [[FBMemoryProfilerDataSource alloc] initWithAnalysisCache:_analysisCache];
+      _dataSource.classFilter = @"BDS";
     _byteCountFormatter = [NSByteCountFormatter new];
 
     self.profilerOptions = options;

@@ -1,4 +1,4 @@
 
 target 'ExampleApp' do
-    pod 'FBMemoryProfiler'
+    pod 'FBMemoryProfiler' , git:'git@github.com:Artoria-Huang/FBMemoryProfiler.git'
 end

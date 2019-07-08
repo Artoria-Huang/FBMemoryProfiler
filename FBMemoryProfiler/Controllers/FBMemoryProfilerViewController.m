@@ -259,7 +259,8 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
                             inGeneration:(NSUInteger)generationIndex
                           presentDetails:(BOOL)presentDetails
 {
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_queue_t queue = dispatch_queue_create("come.facebook.memoryProfile.findRetainCycle", NULL);
+  dispatch_async(queue, ^{
     for (NSString *className in classesNamed) {
       Class aCls = NSClassFromString(className);
       NSArray *objects = [[FBAllocationTrackerManager sharedManager] instancesForClass:aCls

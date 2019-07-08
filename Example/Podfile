@@ -1,0 +1,4 @@
+
+target 'ExampleApp' do
+    pod 'FBMemoryProfiler'
+end
